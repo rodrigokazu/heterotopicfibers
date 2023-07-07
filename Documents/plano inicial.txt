@@ -1,0 +1,22 @@
+NetLogo ou R?
+    Netlogo 3d parece funcionar, mas o Netlogo tem limitações de performance e de tempo do programador.
+    R tem o rgl, que faz os gráficos. O lance é só que tem que reconstruir a roda de visualização, e nem sei se rola de reconstruir a roda de visualização a cada tick.
+
+Começar simples:
+    - 3D
+    - uma região, bilateral, LM;
+    - regras pro axônio;
+    - ver se formam feixes, com essas regras;
+
+Full model:
+    - desenho do que seria uma simplificação do córtex;
+    - demarcação de regiões;
+    - a cada tick, cria um axônio em alguma região, aleatoriamente;
+    - os axônios saem andando em random walk, mas com preferência de ir na direção da LM;
+    - se chega na LM, sinaliza que cruzou
+    - continua andando aleatoriamente até chegar em outra região ou (se for a regra) em outro axônio
+    - se chegar em outra região, para ali
+    - se chegar em outro axônio, fascicula e passa a seguir ele
+    - se andar por muito tempo e não chegar, morre
+    - roda até ter um número de axônios ou até ficar cheio/muitos morrendo
+    - faz a histologia virtual, conta onde eles chegaram e tal

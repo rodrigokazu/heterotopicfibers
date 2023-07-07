@@ -1,0 +1,164 @@
+fiz um brainstorming aqui de regras para os axonios
+[16:58, 5/17/2021] Diego Szczupak: Fixas
+
+Axonios crescem na msm velocidade
+Eles sao atraidos por moleculas secretadas na linha media
+Existe um gradiente temporal antero-posterior
+Conexões que não chegarem no córtex são removidas
+
+Teste
+
+Uma vez que eles chegam na LM, gruda no prox e continua o caminho ate atingir o córtex
+Seguem caminhos aleatórios
+Algo no meio do caminho, talvez os primeiros grudam e os outros são aleatórios
+[16:58, 5/17/2021] Diego Szczupak: imaginando um slab do cortex, com neuronios em locais especificos
+[16:58, 5/17/2021] Diego Szczupak: acha que daria pra testar?
+Parece "menor" do que eu tava imaginando
+Vc não tinha uns padrões envolvendo as regiões (e não axônios)?
+De heterotopicas, mas acredito que só sejam regiões com uma maior densidade de axonios
+Eu tava imaginando uma abstração em que a região é o menor componente, não os axônios
+Mas vai ver o pulo tá aí, a coisa só faz sentido com axônios, sei lá
+Acho que as regiões são só pontos de origem, os axonios que realmente importam
+Pq a densidade varia?
+ou como?
+Pq uma região e mais hiper conectada que outra dentro do hemisfério
+Quero dizer, no desenvolvimento, pq uma acaba com mais
+[19:42, 5/17/2021] Diego Szczupak: E e u acho que o Inter só reflete
+[19:42, 5/17/2021] Diego Szczupak: Pq uma região tem mais conexões no geral e uma boa pergunta, imagino que tenha a ver com os inputs, mas aí e chute
+pois é, como as associativas acabam mais conectadas? no início, a diferença é só pq elas estão a mais sinapses de distância do input, né?
+ou tem alguma pré-disposição a ser mais conectada? chutaria que não
+[19:43, 5/17/2021] Diego Szczupak: Chutaria que sim, mas talvez por padrão de.maturacao
+[19:44, 5/17/2021] Diego Szczupak: Tipo ela começa a desenvolver quando já tem mais conexões disponiveis
+[19:44, 5/17/2021] Diego Szczupak: Mas sei lá, acho que modelar as interhemispheric deve ser bem diferente de modelar conexões em geral
+[19:44, 5/17/2021] Diego Szczupak: Até por conta da distancia
+Partindo disso aqui, o que vc esperaria ver?
+A gente tem as medidas da vida real com histo
+Explicar a % de heterotopia?
+[19:45, 5/17/2021] Diego Szczupak: Então eu queria ver quais fatores realmente importam
+[19:46, 5/17/2021] Diego Szczupak: Especialmente para os de teste
+[19:46, 5/17/2021] Diego Szczupak: Isso tbm, mas e mais a proporção que me interessa
+[19:46, 5/17/2021] Diego Szczupak: Se realmente precisamos assumir que eles grudam nós outros pra seguir adiante
+[19:47, 5/17/2021] Diego Szczupak: Se só quando vc assume que os axonios se perdem que vc encontra as heterotopicas, ou que isso acontece mesmo com um sistema ordenado
+[19:47, 5/17/2021] Diego Szczupak: E especialmente o que a gente n sabe que eu preciso colher dados experimentais pra fechar a historia
+Então o lance é fazer um axônio simplificado que faz aquilo ali que tu disse, e ver se precisa desse grude pra reproduzir o que tu vê na histo?
+Isso
+E o que tu vê na histo?
+Qual a cara do dado?
+Qual a medida?
+[19:49, 5/17/2021] Diego Szczupak: O axonio pode ser só um ponto que se mexe deixando rastro
+[19:49, 5/17/2021] Diego Szczupak: Na histo eu vejo o axonio em si
+E tu compararia rastros?
+[19:49, 5/17/2021] Diego Szczupak: Compararia as trajetórias, proporções, disposição na linha média...
+[19:49, 5/17/2021] Diego Szczupak: Conexões por áreas, heterotopicidades
+[19:50, 5/17/2021] Diego Szczupak: Coisas assim
+então tem que ser um ponto que se mexe num espaço anatomicamente correto, né?
+[19:50, 5/17/2021] Diego Szczupak: Nem precisa ser tão anatomicamente correto
+[19:50, 5/17/2021] Diego Szczupak: Só precisa ser algo meio arredondado como o cortex pra que cada região tenha uma distância diferente pra linha media
+[19:51, 5/17/2021] Diego Szczupak: E subdividido em regiões arbitrárias para que possamos quantificar conexoes
+[19:51, 5/17/2021] Diego Szczupak: Se der pra medir número de axonios de a pra b seria perfeito
+saquei ... aí tu só compara padrões genéricos de conexão
+[19:52, 5/17/2021] Diego Szczupak: Isso
+[19:52, 5/17/2021] Diego Szczupak: E de orientação dos axonios
+as mais longe tem conectividade mais assim ou assado
+[19:52, 5/17/2021] Diego Szczupak: Algo do tipo
+[19:52, 5/17/2021] Diego Szczupak: Se eu consigo um nível de heterotoicidade x grudando ou nao
+[19:53, 5/17/2021] Diego Szczupak: Se só explica o cruzamento de eu assumir que nem sempre.gruda
+tá, acho que eu não entendi o grude ainda haha
+Ah
+o axônio foi até a LM
+Fasciculations
+e aí?
+tem outro ali?
+e gruda nele?
+[19:53, 5/17/2021] Diego Szczupak: Aí quando ele chega la os atratores somem, senão ele ficava lá pra sempre
+[19:54, 5/17/2021] Diego Szczupak: Aí tem duas opções. Ele pode seguir por aí aleatoriamente
+[19:54, 5/17/2021] Diego Szczupak: Ou fascicular no axonio que veio do outro lado, literalmente grudar nele e continuar o caminho indo na direção de origem do axonio contralateral
+acho que entendi
+então teria que ter essa detecção de colisão né?
+tem outro vindo
+Sim, até pra eles n ocuparem todos o msm espaço no cruzamento
+então tem dois lados, com regiões distintas, projetam axônios, às vezes eles batem
+[19:57, 5/17/2021] Diego Szczupak: Isso
+[19:57, 5/17/2021] Diego Szczupak: E se um lado chega no outro ele pode grudar
+e aí vc quer mudar é a regra do que acontece depois do cruzamento
+[19:57, 5/17/2021] Diego Szczupak: Depois em especial e durante tbm
+[19:58, 5/17/2021] Diego Szczupak: Pq eu acho que os axonios andam que nem bebados
+Mas o durante é esse momento único né? fasciculou ou seguiu bêbado
+[19:58, 5/17/2021] Diego Szczupak: Eles n vão muito em linha reta. Poder controlar o tamanho da aleatoriedade parece legal
+[19:58, 5/17/2021] Diego Szczupak: Nao, desde o inicio
+[19:58, 5/17/2021] Diego Szczupak: Pq ele sai do cortex e vai em direção a lm
+no início vc não assume que os atratores funcionam e eles chegam em algum momento no meio?
+[19:59, 5/17/2021] Diego Szczupak: Sim
+[19:59, 5/17/2021] Diego Szczupak: Mas de forma meio bebada
+sim, sim
+[19:59, 5/17/2021] Diego Szczupak: Pq isso pode explicar tbm as heterotopicas
+[19:59, 5/17/2021] Diego Szczupak: Eles chegam na lm no lugar errado e por isso vão parar em outras regiões
+e no caso de não fascicular
+como ele saberia que chegou no destino?
+Acho que vão vagando por aí e se chegarem no cortex, chegou. Se n chegar até um tempo x, ele morre
+e ser em 2D seria um problema?
+Pras colisões e tal
+eles poderiam passar pelo mesmo ponto na linha média e não colidirem pq um tá por cima, sei lá
+Acho que precisa ser em 3d pq eles se perderiam bem menos em 2d. Mas pode ser um inicio
+Acho que isso é bem factível no netlogo
+eu abstrairia as moléculas, só faz o axônio ter uma preferência não explicada pela LM
+pra cada 3 passos aleatórios, ele dá um na direção certa, ou algo assim, regulável
+[20:06, 5/17/2021] Diego Szczupak: Ah sim, eu n colocaria nada muito complexo pra isso
+[20:06, 5/17/2021] Diego Szczupak: O negócio principal e ter um switch uma vez que ele cruza, senão ele volta pra lm
+É random walk com lampejos de "lembrei pra onde eu to indo"
+[20:06, 5/17/2021] Diego Szczupak: Super engraçado ver isso in vitro
+[20:06, 5/17/2021] Diego Szczupak: Por aí hahaha
+como o axônio sabe?
+Nunca tentei usar, mas o netlogo tem a terceira dimensão
+[20:09, 5/17/2021] Diego Szczupak: pelas.moleculas uma vez que eles passam pela lm, os receptores desligam
+[20:09, 5/17/2021] Diego Szczupak: Vai ser tipo desbloquear o cosmos
+Aí ok, você faz um desenho do que seria uma simplificação do córtex, usa isso de base, define regiões ... a cada tick, cria um axônio em alguma região, aleatoriamente ... os axônios saem andando nesse esquema bêbado com lampejos ... se chega na linha média, ele sabe que cruzou e continua andando aleatoriamente até chegar em outra região ou (se for a regra) em outro axônio
+Eu acho. N tenho referências nao
+Roda até ter um número suficiente de axônios e faz a histologia virtual, conta onde eles chegaram e tal
+Ou faz até encher o córtex (se um axônio não puder atravessar o outro, eventualmente vai travar tudo)
+Tipo isso
+Tu não acha que o desenho importa?
+[20:11, 5/17/2021] Diego Szczupak: Talvez seja legal ter esse fenômeno
+[20:12, 5/17/2021] Diego Szczupak: Do cortex?
+[20:12, 5/17/2021] Diego Szczupak: Talvez
+É
+Pq talvez fosse algo a mais pra variar
+[20:12, 5/17/2021] Diego Szczupak: Acho que sim, mas tbm n sei o quanto de trabalho da
+[20:12, 5/17/2021] Diego Szczupak: Mas idealmente podíamos rodar com um camundongo, sagui e humano
+[20:13, 5/17/2021] Diego Szczupak: Eu tenho reconstruções em 3d de cada
+Mas sei lá ... Acho que eu começaria fazendo uma coisa mais simples, tipo, uma região (bilateral), bem perto da LM, ver se formam feixes, com essas regras
+Parece bacana
+Se isso funcionar, dá alguma garantia de que o modelo não tem um comportamento bizarro
+Tem que ver o quão difícil e importar o desenho 3d
+E a lógica do axônio em si vai estar pronta, depois é só mudar o desenho do córtex
+[20:14, 5/17/2021] Diego Szczupak: Pq se for fácil, eu posso já ir convertendo pra ter na manga
+[20:14, 5/17/2021] Diego Szczupak: Pode até começar um teste em 2d
+[20:15, 5/17/2021] Diego Szczupak: Sim
+Acho que aí é uma escolha de fazer um modelo "conceitual" ou um "realista"
+É o que tu disse antes, no fundo, o que importa é que as regiões tem distâncias diferentes da linha média
+Sim
+Se for isso, desde que o córtex simplificado tem isso, não devia fazer diferença
+O que é diferente entre eles que tu acha que importa?
+[20:16, 5/17/2021] Diego Szczupak: Mas ia ser puta maneiro se a gente colocasse os cérebros desses bichos e desse o resultado que eu vi na ressonância
+[20:17, 5/17/2021] Diego Szczupak: N sei se e algo geométrico ou se e mais profundo da conectividade intrínseca
+Aham ... mas se for pra ser mais realista, tem que pensar em escala, em um computador que consiga simular milhares de axônios rs
+Eu não conheço, mas tem vários softwares de neuro computacional que devem simular neurônios e axônios bem realistas
+[20:17, 5/17/2021] Diego Szczupak: Então, como isso aí e trabalho, eu posso rodar no meu da universidade
+[20:17, 5/17/2021] Diego Szczupak: 128g de memória e 32 cores
+E quando tu vai bolar um projeto que envolva minecraft?
+[20:18, 5/17/2021] Diego Szczupak: Axonios feitos de naga?
+[20:18, 5/17/2021] Diego Szczupak: Sempre possível
+Haha eu tava pensando "o cérebro sob o efeito de jogos", mas esse é melhor, mais fora da caixa
+Qual o tamanho do slab? Quantos axônios tu conta?
+[20:22, 5/17/2021] Diego Szczupak: Hahahaha
+[20:22, 5/17/2021] Diego Szczupak: Acho que depende de qual difícil for rodar isso
+[20:22, 5/17/2021] Diego Szczupak: O tamanho em si n importa né, só a densidade de axonios no fim? Penso em rodar com uns 10k de cada lado?
+É, densidade ... Acho que os axônios importam mais, mas o espaço também é representado, então se forem 10 axônios em 2 cm é diferente de 10 axônios em 2 mm
+Se for algo muito massivo, eu não iria de netlogo também
+Só perde a graça de que no netlogo é fácil de ver acontecendo
+[20:26, 5/17/2021] Diego Szczupak: Eu iria com o Max que o netlogo forncer
+[20:26, 5/17/2021] Diego Szczupak: Cérebro de 2cm e axonio tão pequeno quanto de pra ver
+[20:27, 5/17/2021] Diego Szczupak: Se ele puder mudar de cor dependendo da trajetória, melhor ainda. Tipo pra parecer mri
+[20:27, 5/17/2021] Diego Szczupak: A I bota o que der. Se der 10k, bota. Se der 100 bota 100
+
+=================

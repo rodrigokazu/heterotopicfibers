@@ -1,0 +1,101 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+%% memo.tex
+%% V1.1
+%% 2017/10/203
+%% by Prof. Rui Santos Cruz
+%% based on a template created by Rob Oakes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt]{texMemo}
+% --> Please Choose the MAIN LANGUAGE for the document in package BABEL
+% --> by replacing "main=" in language name selector. Default is "main=english"
+\usepackage{hyperref}
+\usepackage[english]{babel} % Defines Main language
+\usepackage[utf8]{inputenc}
+\usepackage{iflang}
+\usepackage{ifthen}
+\usepackage{parskip}
+%\setlength{\parindent}{15pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	MEMO INFORMATION --> Write your info in the following tags.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\memofrom{Dr Rodrigo Siqueira, Paulo Chagas and Dr Diego Szczupak} % Sender(s) Name
+\memoid{Axonal Guidance} % Student ID
+\memocourse{University of Sheffield, UFRJ, University of Pittsburgh} % Course Name, or abbreviated acronym
+\memosubject{6 months from start date} % Subject
+\memodate{\today} % Date, -> set to \today for automatically print todays date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+	
+
+\includegraphics[height=0.8in]{Figures/Sheffield.png}   
+\hfill 
+\includegraphics[height=0.8in]{Figures/Pittsburgh.png}  
+
+
+\vspace{1cm}
+
+\maketitle % Print the memo header information
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	MEMO CONTENT --> Your content is written here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Key planning points:}
+
+\subsection{NetLogo ou R?}
+
+Netlogo 3d parece funcionar, mas o Netlogo tem limitações de performance e de tempo do programador. \\ \\
+R tem o rgl, que faz os gráficos. O lance é só que tem que reconstruir a roda de visualização, e nem sei se rola de reconstruir a roda de visualização a cada tick.
+
+\subsection{Start simple}
+
+\begin{itemize}
+
+\item 3D
+\item uma região, bilateral, LM;
+\item regras pro axônio;
+\item ver se formam feixes, com essas regras;
+
+\end{itemize}
+
+\pagebreak
+
+\subsection{Full model}
+
+\begin{itemize}
+	
+\item desenho do que seria uma simplificação do córtex;
+\item demarcação de regiões;
+\item a cada tick, cria um axônio em alguma região, aleatoriamente;
+\item os axônios saem andando em random walk, mas com preferência de ir na direção da LM;
+\item se chega na LM, sinaliza que cruzou
+\item continua andando aleatoriamente até chegar em outra região ou (se for a regra) em outro axônio
+\item se chegar em outra região, para ali
+\item se chegar em outro axônio, fascicula e passa a seguir ele
+\item se andar por muito tempo e não chegar, morre
+\item roda até ter um número de axônios ou até ficar cheio/muitos morrendo
+\item faz a histologia virtual, conta onde eles chegaram e tal
+
+\end{itemize}
+
+\vspace{\fill}
+\begin{center}
+	\rule{74ex}{.1mm}\\
+	\textbf{Active Touch Laboratory, University of Sheffield}\\
+	Department of Psychology, Sheffield S1 2LT, UK\\ 
+	\href{http://activetou.ch}{http://activetou.ch}
+	
+\end{center}
+
+\normalsize
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
